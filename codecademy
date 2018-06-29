@@ -1,0 +1,44 @@
+var CheckingSystem;
+var MakeUserName;
+var makeName;
+var TF = true;
+var SystemExit = function() {
+    TF = false;
+    Start();
+    };
+var UserName = function(NAME) {
+    return NAME;
+    };
+var UserJob = function(JOB) {
+    return JOB;
+    };
+var UserHp = function(U_HP) {
+    return U_HP;
+    };
+var UserMp = function(U_MP) {
+    return U_MP;
+    }; 
+CheckingSystem = function(CheckInformation) {
+    if(CheckInformation === null) {
+        console.log("It's not truth name! Try again!");
+        MakeUserName();
+        }
+    else if(CheckInformation === 'exit' || 'end' || '끝' || '그만') {
+        SystemExit();
+        }
+    };
+MakeUserName = function() {
+    makeName = prompt("What's your name?");
+    CheckingSystem(makeName);
+    console.log(makeName);
+    };
+var Start = function() {
+    if(TF === false) {
+        return 0;
+        }
+    while(TF) {
+        MakeUserName();
+        UserName(makeName);
+        }
+    }
+Start();
